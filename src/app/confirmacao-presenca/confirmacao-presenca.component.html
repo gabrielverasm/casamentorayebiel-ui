@@ -1,0 +1,42 @@
+<section data-spy="scroll" id="presenca">
+  <div class="container">
+    <h1>~ Confirmação de Presença ~</h1>
+    <form>
+      <div>
+        <input type="text" class="form-control" placeholder="Nome do Convidado." id="nomeConvidado" disabled>
+      </div>
+      <div class="checkbox">
+        <label>Você vai ao casamento?</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" style="margin-left: 4vh;" type="radio" name="confPresencaRadio" id="sim"
+            value="option1" checked disabled>
+          <label class="form-check-label" for="sim">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="confPresencaRadio" id="nao" value="option2" disabled>
+          <label class="form-check-label" for="nao">Não</label>
+        </div>
+      </div>
+      <div>
+        <select class="custom-select mr-sm-2" id="qtdAdultos" disabled>
+          <option selected>Quantos adultos?</option>
+          <option value="1">01</option>
+          <option value="2">02</option>
+          <option value="3">03</option>
+          <option value="4">04</option>
+          <option value="5">05</option>
+          <option value="6">06</option>
+          <option value="7">07</option>
+          <option value="8">08</option>
+          <option value="9">09</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div style="padding-top: 2vw;">
+        <input type="number" class="form-control area" placeholder="(85)" id="Area" disabled>
+        <input type="number" class="form-control telefone" placeholder="98888-8888" data-inputmask="'mask': '99999-9999'" id="telefone" disabled>
+      </div>
+      <button type="submit" class="btn btn-info" style="margin-top: 2vw;" disabled>Confirmar Presença</button>
+    </form>
+  </div>
+</section>

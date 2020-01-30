@@ -1,0 +1,42 @@
+section {
+  height: 100%;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+iframe {
+  height: 40vh;
+}
+
+.card-body {
+  color: #581d22;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card {
+  margin: 5vh 0vh;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 6.5vh;
+  text-align: center;
+  padding-top: 56px;
+  color: #581d22;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 5.5vh;
+  text-align: center;
+  color: #581d22;
+  margin: 0;
+}
+
+/* .mango {
+  font-size: 1vh;
+} */

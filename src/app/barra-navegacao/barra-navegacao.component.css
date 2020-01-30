@@ -1,0 +1,27 @@
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  Color: #581d22;
+}
+
+.bg-light {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.divisor {
+  width: 2px;
+  height: 20px;
+  background-color: #581d22;
+  margin: 9px 10px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  Color: #581d22;
+}
+
+.navbar-light .navbar-nav .show>.nav-link, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #581d22;
+}
+
+nav a.active {
+  color: #581d22;
+}

@@ -1,0 +1,49 @@
+section {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.51) 100%), url('/assets/img/backgroundPrincipal.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: auto;
+}
+
+.capa {
+  /* height: 100%;
+  display: table; */
+  /* width: 100%; */
+  padding-top: 10vh;
+}
+h1 {
+  /* padding-top: 8vh; */
+  font-family: 'Tangerine', cursive;
+  letter-spacing: 6px;
+  font-size: 10vh;
+  margin: 0;
+}
+h2{
+  font-family: 'Tangerine', cursive;
+  letter-spacing: 6px;
+  margin: 0;
+  font-size: 6.5vh;
+  /* padding-top: 5vh; */
+}
+h3 {
+  /* padding-top: 8vh; */
+  font-size: 5vh;
+}
+h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 3vh;
+  letter-spacing: 2px;
+}
+.texto-capa {
+  font-family: 'Tangerine', cursive;
+  letter-spacing: 6px;
+  /* font-family: 'Pacifico', cursive; */
+  text-align: center;
+  /* display: table-cell; */
+  vertical-align: middle;
+}

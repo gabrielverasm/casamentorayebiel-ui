@@ -1,0 +1,13 @@
+section {
+  position: relative;
+}
+
+H1 {
+  text-align: center;
+  margin-top: 48vh;
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Tangerine', cursive;
+  font-size: 6vh;
+  letter-spacing: 6px;
+  Color: #581d22;
+}

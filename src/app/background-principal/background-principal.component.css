@@ -1,7 +1,7 @@
 section {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgba(255, 255, 255, 0.51) 100%), url('assets/img/backgroundPrincipal.jpg');
+  background: linear-gradient(rgba(255, 255, 255, 0.51) 100%), url('/assets/img/backgroundPrincipal.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,11 @@ import { ListaPresentesComponent } from './lista-presentes/lista-presentes.compo
 import { InicioComponent } from './inicio/inicio.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+import { PagamentoComponent } from './pagamento/pagamento.component';
+registerLocaleData(ptBr);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +29,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LocalizacaoComponent,
     ListaPresentesComponent,
     InicioComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-PT' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

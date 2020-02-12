@@ -8,3 +8,6 @@ body{
   font-family: 'Pacifico', cursive;
   src: url('https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet');
 }
+html{
+  overflow-x:hidden;
+}

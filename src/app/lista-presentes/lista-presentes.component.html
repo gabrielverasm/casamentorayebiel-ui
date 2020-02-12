@@ -1,10 +1,24 @@
 <section>
   <app-barra-navegacao></app-barra-navegacao>
-  <h1>A lista de presentes está em desenvolvimento!</h1><br>
-  <h2>Mas vocês podem fazer depósito em nossa conta:</h2><br>
-  <p><strong>Banco (260)</strong> - Nu Pagamentos S.A (260)</p>
-  <p><strong>Ag:</strong> 0001</p>
-  <p><strong>Conta:</strong> 8589273-1</p>
-  <p><strong>Titular:</strong> Gabriel Veras Miranda</p>
-  <p><strong>CPF:</strong> 600.159.123-70</p>
+  <h1>Lista de Presentes</h1>
+  <p>Escolha quantos presentes desejar.</p>
+  <div class="container">
+    <div class="card text-center">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3 cartao" *ngFor="let produto of Produtos">
+          <img [src]="produto.img" width="100%" alt="...">
+          <div class="card-body" height="10vh">
+            <p>{{produto.descricao}}</p>
+          </div>
+          <h3>{{produto.valor | currency:'BRL'}}</h3>
+          <button type="button" class="btn btn-info text-center">Adicionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btnFloating">
+    <a href="">
+      <img src="../assets/img/cesta.png" width="64px" height="64px">
+    </a>
+  </div>
 </section>

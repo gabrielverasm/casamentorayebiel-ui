@@ -5,3 +5,6 @@ img{
   width: 3vw;
   height: 3vw;
 }
+.form-control{
+  width: 90px;
+}

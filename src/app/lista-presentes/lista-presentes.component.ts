@@ -22,7 +22,7 @@ export class ListaPresentesComponent implements OnInit {
     new Produto('../../assets/img/frigideira.jpg', 'Frigideira anti aderente MaxChef.', 'casa', 159.99),
     new Produto('../../assets/img/tv.jpg', 'Smart TV LG 50 polegadas 4K.', 'casa', 2099.90),
     new Produto('../../assets/img/mesa.jpg', 'Mesa para notebook.', 'casa', 450.00),
-    new Produto('../../assets/img/aprjantar.jpg', 'Aparelho Jantar.', 'casa', 450.00),
+    new Produto('../../assets/img/aprjantar.jpg', 'Aparelho Jantar.', 'casa', 579.90),
     new Produto('../../assets/img/jglencol.jpg', 'Jogo de lençol 200 fios.', 'casa', 300),
     new Produto('../../assets/img/colchao.jpg', 'Colchão Queen.', 'casa', 1000),
     new Produto('../../assets/img/arcon.jpg', 'Ar condicionado 9.000btus Midea.', 'casa', 1500),
@@ -47,7 +47,7 @@ export class ListaPresentesComponent implements OnInit {
     new Produto('../../assets/img/picnic.jpg', 'Garanta um piquenique romântico para os recém casado no cocó.', 'casal', 90),
     new Produto('../../assets/img/joia.jpg', 'Compre uma jóia arretada pra essa noiva linda.', 'casal', 236.74),
     new Produto('../../assets/img/presele.jpg', 'Um mimo para o gabriel.', 'casal', 77.55),
-    new Produto('../../assets/img/presente.jpg', 'Uma lembrancinha pra Rayane.', 'casal', 79.48),
+    new Produto('../../assets/img/presente.jpg', 'Uma lembrancinha para Rayane.', 'casal', 79.48),
 
   ];
 

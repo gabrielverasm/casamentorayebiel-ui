@@ -1,24 +1,33 @@
 <section data-spy="scroll" id="presenca">
   <div class="container">
     <h1>~ Confirmação de Presença ~</h1>
-    <form>
+    <form  (ngSubmit)="onSubmit($event)" #confirmacaoForm="ngForm" >
+        <div *ngIf="mensagem" class="alert alert-success" role="alert">
+            {{mensagem}}
+        </div>
       <div>
-        <input type="text" class="form-control" placeholder="Nome do Convidado." id="nomeConvidado" disabled>
+        <input [(ngModel)]="confirmacao.nome" 
+               type="text" class="form-control" 
+               placeholder="Nome do Convidado." id="nomeConvidado" 
+               name="nome">
       </div>
       <div class="checkbox">
         <label>Você vai ao casamento?</label>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" style="margin-left: 4vh;" type="radio" name="confPresencaRadio" id="sim"
-            value="option1" checked disabled>
+          <input class="form-check-input" style="margin-left: 4vh;" 
+                 type="radio" name="confPresencaRadio" id="sim"
+                 value="option1" checked>
           <label class="form-check-label" for="sim">Sim</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="confPresencaRadio" id="nao" value="option2" disabled>
+          <input class="form-check-input" type="radio" name="confPresencaRadio" id="nao" value="option2" >
           <label class="form-check-label" for="nao">Não</label>
         </div>
       </div>
       <div>
-        <select class="custom-select mr-sm-2" id="qtdAdultos" disabled>
+        <select class="custom-select mr-sm-2" 
+                id="qtdAdultos" name="adultos"
+                [(ngModel)]="confirmacao.adultos">
           <option selected>Quantos adultos?</option>
           <option value="1">01</option>
           <option value="2">02</option>
@@ -33,10 +42,17 @@
         </select>
       </div>
       <div style="padding-top: 2vw;">
-        <input type="number" class="form-control area" placeholder="(85)" id="Area" disabled>
-        <input type="number" class="form-control telefone" placeholder="98888-8888" data-inputmask="'mask': '99999-9999'" id="telefone" disabled>
+        <input type="number" 
+               [(ngModel)]="confirmacao.area"
+               class="form-control area" 
+               name="area"
+               placeholder="(85)" id="Area" >
+        <input type="number"
+               [(ngModel)]="confirmacao.telefone" 
+               name="telefone"
+               class="form-control telefone" placeholder="98888-8888" data-inputmask="'mask': '99999-9999'" id="telefone">
       </div>
-      <button type="submit" class="btn btn-info" style="margin-top: 2vw;" disabled>Confirmar Presença</button>
+      <button type="submit" class="btn btn-info" style="margin-top: 2vw;" >Confirmar Presença</button>
     </form>
   </div>
 </section>

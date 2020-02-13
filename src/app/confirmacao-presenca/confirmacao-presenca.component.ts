@@ -12,6 +12,7 @@ export class ConfirmacaoPresencaComponent {
 
   confirmacao: Confirmacao = new Confirmacao();
   mensagem: string;
+  errors = [];
 
   constructor(private service: ConfirmacaoService){}
 
@@ -22,6 +23,12 @@ export class ConfirmacaoPresencaComponent {
       .subscribe(data => {
         this.mensagem = "Presença confirmada com sucesso, "+ this.confirmacao.nome + ", te aguardamos.";
         this.confirmacao = new Confirmacao();
+        this.mensagem = null;
+        this.errors = []
+      }, error => {
+        if(error.error){
+          this.errors = error.error;
+        }
       })
   }
 }

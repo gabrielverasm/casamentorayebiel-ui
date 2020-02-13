@@ -1,39 +1,30 @@
 <section data-spy="scroll" id="presenca">
   <div class="container">
     <h1>~ Confirmação de Presença ~</h1>
-    <form  (ngSubmit)="onSubmit($event)" #confirmacaoForm="ngForm" >
-        <div *ngIf="mensagem" class="alert alert-success" role="alert">
-            {{mensagem}}
-        </div>
-
-        <div *ngFor="let err of errors" class="alert alert-danger" role="alert">
-            {{err}}
-        </div>
-      <div>
-        <input [(ngModel)]="confirmacao.nome" 
-               type="text" class="form-control" required
-               placeholder="Nome do Convidado." id="nomeConvidado" 
-               name="nome">
+    <form (ngSubmit)="onSubmit($event)" #confirmacaoForm="ngForm">
+      <div *ngIf="mensagem" class="alert alert-success" role="alert">
+        {{mensagem}}
       </div>
-    
+
+      <div *ngFor="let err of errors" class="alert alert-danger" role="alert">
+        {{err}}
+      </div>
       <div>
-        <input type="number" class="mr-sm-2" 
-                placeholder="Quantidade de adultos" required
-                id="qtdAdultos" name="adultos"
-                [(ngModel)]="confirmacao.adultos" />
+        <input [(ngModel)]="confirmacao.nome" type="text" class="form-control" required placeholder="Nome do Convidado."
+          id="nomeConvidado" name="nome">
+      </div>
+
+      <div style="padding-top: 2vw;">
+        <input type="number" class="form-control" min="1" placeholder="Quantidade de adultos" required id="qtdAdultos" name="adultos"
+          [(ngModel)]="confirmacao.adultos" />
       </div>
       <div style="padding-top: 2vw;">
-        <input type="number" 
-               [(ngModel)]="confirmacao.area"
-               class="form-control area" 
-               name="area" required
-               placeholder="(85)" id="Area" >
-        <input type="number"
-               [(ngModel)]="confirmacao.telefone" 
-               name="telefone" required
-               class="form-control telefone" placeholder="98888-8888" data-inputmask="'mask': '99999-9999'" id="telefone">
+        <input type="number" [(ngModel)]="confirmacao.area" class="form-control area" name="area" min="0" required
+          placeholder="(85)" id="Area">
+        <input type="number" [(ngModel)]="confirmacao.telefone" name="telefone" required min="0" class="form-control telefone"
+          placeholder="98888-8888" data-inputmask="'mask': '99999-9999'" id="telefone">
       </div>
-      <button type="submit" class="btn btn-info" style="margin-top: 2vw;" >Confirmar Presença</button>
+      <button type="submit" class="btn btn-info" style="margin-top: 2vw;">Confirmar Presença</button>
     </form>
   </div>
 </section>

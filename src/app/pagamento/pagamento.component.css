@@ -1,10 +1,43 @@
-.container{
+.container {
   margin-top: 80px;
 }
-img{
-  width: 3vw;
-  height: 3vw;
+
+img {
+  width: 35px;
 }
-.form-control{
-  width: 90px;
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4.5vh;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5vh;
+  text-align: center;
+}
+
+ul:before {
+  content: attr(aria-label);
+  font-size: 120%;
+  font-weight: bold;
+  margin-left: -15px;
+}
+
+th {
+  text-align: center;
+}
+
+hr.style1 {
+  border-top: 1px solid #8c8b8b;
+}
+
+.tipopag {
+  padding-top: 10px;
+  text-align: center;
+}
+
+label {
+  padding-top: 3px;
 }

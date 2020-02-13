@@ -3,30 +3,45 @@
   <app-barra-navegacao></app-barra-navegacao>
 
   <div class="container">
-
-    <ul class="list-unstyled">
-      <li class="media">
-        <img src='../../assets/img/champagne.jpg' class="mr-3" alt="...">
-        <div class="media-body">
-          <h5 class="mt-0 mb-1">Comemorar nosso casamento com champagne e a beira mar.</h5>
-          <div class="divqtd">
-            <label>Quantidade</label>
-            <input type="number" class="form-control" placeholder="Qtd." id="qtd" min="1"></div>
-        </div>
-      </li>
-      <li class="media my-4">
-        <img src='../../assets/img/malas.jpg' class="mr-3" alt="...">
-        <div class="media-body">
-          <h5 class="mt-0 mb-1">Conjunto de malas para a viagem mais especial de nossas vidas.</h5>
-        </div>
-      </li>
-      <li class="media">
-        <img src='../../assets/img/suporte.jpg' class="mr-3" alt="...">
-        <div class="media-body">
-          <h5 class="mt-0 mb-1">Suporte de TV.</h5>
-        </div>
-      </li>
-    </ul>
+    <h1>~ Produtos selecionados ~</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Qtd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src='../../assets/img/champagne.jpg' class="mr-3" alt="..."></td>
+          <td>Comemorar nosso casamento com champagne e a beira mar.</td>
+          <td><input type="number" class="form-control" id="qtd" min="1"></td>
+        </tr>
+        <tr>
+          <td><img src='../../assets/img/massagem.jpg' class="mr-3" alt="..."></td>
+          <td>Massagem relaxante para a noiva ficar mais calma para o casamento.</td>
+          <td><input type="number" class="form-control" id="qtd" min="1"></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <hr class="style1">
+    <br>
+    <h2>~ Formas de Pagamento ~</h2>
+    <div class="tipopag">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipopag" id="deposito" value="deposito">
+        <label class="form-check-label" for="deposito">
+          Depósito em conta
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipopag" id="cartao" value="cartao">
+        <label class="form-check-label" for="exampleRadios2">
+          Cartão de Crédito
+        </label>
+      </div>
+    </div>
   </div>
-
 </section>

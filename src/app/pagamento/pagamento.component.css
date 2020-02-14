@@ -49,7 +49,7 @@ label {
   margin-right: auto;
 }
 
-label {
+.total {
   text-align: center;
   font-size: 4vh;
 }

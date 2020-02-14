@@ -23,15 +23,20 @@
           <td>Massagem relaxante para a noiva ficar mais calma para o casamento.</td>
           <td><input type="number" class="form-control" id="qtd" min="1"></td>
         </tr>
+        <tr>
+          <td></td>
+          <td style="text-align: right;">TOTAL:</td>
+          <td>R$1.000,00</td>
+        </tr>
       </tbody>
     </table>
     <br>
     <hr class="style1">
     <br>
-    <h2>~ Formas de Pagamento ~</h2>
+    <h2>~ Formas de Pagamento ~</h2> <!--  Começa forma de pagamento -->
     <div class="tipopag">
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="tipopag" id="deposito" value="deposito">
+        <input class="form-check-input" type="radio" name="tipopag" id="deposito" value="deposito" ng->
         <label class="form-check-label" for="deposito">
           Depósito em conta
         </label>
@@ -42,6 +47,93 @@
           Cartão de Crédito
         </label>
       </div>
+      <div style="margin-top: 20px;">
+        <input type="text" placeholder="Digite seu nome por favor." style="width: 20vw;">
+        <button type="submit" class="btn btn-info" style="margin-left: 4px;">Depositar</button>
+      </div>
     </div>
+    <div class="container">
+      <div class="row" id="contacorrente">
+        <!-- Fechamento do Container das contas correntes -->
+        <div class="card text-center col-12 col-sm-6">
+          <div class="card-header">
+            Gabriel Veras Miranda
+          </div>
+          <div class="card-body">
+            <p class="card-text"><strong>Banco (260)</strong> - Nu Pagamentos S.A<br>
+              <strong>Ag:</strong> 0001<br>
+              <strong>Conta:</strong> 8589273-1 (Conta corrente)<br>
+              <strong>CPF:</strong> 600.159.123-70</p>
+            <br>
+            <hr class="style1">
+            <br>
+            <p class="card-text"><strong>Banco</strong> - Caixa Econômica Federal<br>
+              <strong>Ag:</strong> 1956<br>
+              <strong>Conta:</strong> 64903-4<br>
+              <strong>Op:</strong> 013 (Poupança)<br>
+              <strong>CPF:</strong> 600.159.123-70</p>
+          </div>
+        </div>
+        <div class="card text-center col-12 col-sm-6">
+          <div class="card-header">
+            Rayane Alves Moreira Sales
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <strong>Banco (260)</strong> - Nu Pagamentos S.A<br>
+              <strong>Ag:</strong> 0001<br>
+              <strong>Conta:</strong> 7340956-1 (Conta corrente)<br>
+              <strong>CPF:</strong> 020.778.983-56</p>
+            <br>
+            <hr class="style1">
+            <br>
+            <p class="card-text"><strong>Banco</strong> - Bradesco<br>
+              <strong>Ag:</strong> 7737<br>
+              <strong>Conta:</strong> 36112-7<br>
+              <strong>CPF:</strong> 020.778.983-56</p>
+          </div>
+        </div>
+      </div> <!-- Fechamento do Container das contas correntes -->
+      <div class="cartao" id="cartao">
+        <!-- Abrindo Pagamento com Cartão de crédito. -->
+        <input type="text" class="form-control espaco" placeholder="Digite seu nome." id="convidado">
+        <input type="number" class="form-control espaco" placeholder="Digite seu CPF." min="0" max="999" id="CPF">
+        <input type="email" class="form-control espaco" placeholder="Digite seu e-mail." id="email">
+
+        <br><br>
+        <div class="row">
+          <label class="col-12">Total: R$1000.00</label></div>
+        <select class="form-control form-control-lg espaco" id="parcela">
+          <option>01x de {{carrinho.total}}</option>
+          <option>02x de {{carrinho.total / 2}} = {{carrinho.total}}</option>
+          <option>03x de {{carrinho.total / 3}} = {{carrinho.total}}</option>
+          <option>04x De {{carrinho.total / 4}} = {{carrinho.total}}</option>
+          <option>05x De {{carrinho.total / 5}} = {{carrinho.total}}</option>
+          <option>06x De {{carrinho.total / 6}} = {{carrinho.total}}</option>
+          <option>07x De {{carrinho.total / 7}} = {{carrinho.total}}</option>
+          <option>08x De {{carrinho.total / 8}} = {{carrinho.total}}</option>
+          <option>09x De {{carrinho.total / 9}} = {{carrinho.total}}</option>
+          <option>10x de {{carrinho.total / 10}} = {{carrinho.total}}</option>
+          <option>11x de {{carrinho.total / 11}} = {{carrinho.total}}</option>
+          <option>12x de {{carrinho.total / 12}} = {{carrinho.total}}</option>
+        </select>
+        <select class="form-control form-control-lg espaco" id="bandeira">
+          <option>MasterCard</option>
+          <option>Visa</option>
+          <option>Hipercard</option>
+          <option>Elo</option>
+        </select>
+        <input type="number" name="creditCard" class="form-control espaco" ng-model="creditCard" id="numero" min="0"
+          max="9999999999999999" ng-model-options="{allowInvalid:true}" ui-credit-card-mask
+          placeholder="Número do Cartão de Crédito.">
+        <input type="number" class="form-control espaco" placeholder="Código de Segurança" min="0" max="999"
+          id="codigoSeguranca">
+        <input type="date" class="form-control espaco" placeholder="Data de Validade." id="validade" value="14/20">
+        <input type="text" class="form-control espaco" placeholder="Nome do titular do cartão." id="titular">
+        <br><br>
+        <button type="submit" class="btn btn-info btnpagar">Efetuar Pagamento</button>
+        <br><br><br>
+      </div>
+    </div><!-- Fechamento do Container das contas correntes -->
   </div>
 </section>

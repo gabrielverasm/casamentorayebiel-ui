@@ -41,3 +41,21 @@ hr.style1 {
 label {
   padding-top: 3px;
 }
+
+.espaco {
+  margin-top: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  text-align: center;
+  font-size: 4vh;
+}
+
+.btnpagar {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -15,10 +15,13 @@ import { ListaPresentesComponent } from './lista-presentes/lista-presentes.compo
 import { InicioComponent } from './inicio/inicio.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 registerLocaleData(ptBr);
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ registerLocaleData(ptBr);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot(options)
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-PT' }],
   bootstrap: [AppComponent]

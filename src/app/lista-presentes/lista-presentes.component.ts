@@ -1,5 +1,6 @@
 import { Produto } from './../models/Produto';
 import { Component, OnInit } from '@angular/core';
+import { CarrinhoService } from '../carrinho/carrinho.service';
 
 @Component({
   selector: 'app-lista-presentes',
@@ -51,9 +52,13 @@ export class ListaPresentesComponent implements OnInit {
 
   ];
 
-  constructor() { }
+  constructor(private carrinhoService: CarrinhoService) { }
 
   ngOnInit() {
+  }
+
+  adicionarProduto(produto: Produto){
+    this.carrinhoService.adicionaItem(produto);
   }
 
 }

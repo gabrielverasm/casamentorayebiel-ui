@@ -41,7 +41,7 @@ export class PagamentoComponent implements OnInit {
 
   limpar(){
     this.carrinhoService.limparCarrinho();
-    this.carrinho = this.carrinhoService.obterCarrinho();
+    this.carrinho = new Carrinho();
     this.pagamento = new Pagamento();
   }
 
@@ -55,6 +55,7 @@ export class PagamentoComponent implements OnInit {
           this.errors = []
           this.limpar();
         },error => {
+          console.log(error)
           this.mensagem = null;
           if(error.error){
             this.errors = error.error;

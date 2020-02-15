@@ -41,7 +41,8 @@
       </tbody>
     </table>
     <br />
-   
+
+      
     <br>
     <hr class="style1">
     <br>
@@ -60,6 +61,15 @@
         </label>
       </div>
       <div style="margin-top: 20px;"  *ngIf="pagamento.forma === 'deposito'">
+        <div id="feedbackDeposito">
+          <div *ngIf="mensagem" class="alert alert-success" role="alert">
+            {{mensagem}}
+          </div>
+    
+          <div *ngFor="let err of errors" class="alert alert-danger" role="alert">
+            {{err}}
+          </div>
+        </div>
         <input type="text" [(ngModel)]="carrinho.convidado" name="convidado" placeholder="Digite seu nome por favor." style="width: 20vw;">
         <button type="submit" class="btn btn-info" style="margin-left: 4px;">Depositar</button>
       </div>
@@ -166,7 +176,6 @@
 
         <input type="text" name="titular" [(ngModel)]="pagamento.cartao.titular" class="form-control espaco" placeholder="Nome do titular do cartão." id="titular">
         <br><br>
-        <button type="submit" class="btn btn-info btnpagar">Efetuar Pagamento</button>
         <div id="feedback">
           <div *ngIf="mensagem" class="alert alert-success" role="alert">
             {{mensagem}}
@@ -176,6 +185,8 @@
             {{err}}
           </div>
         </div>
+        <button type="submit" class="btn btn-info btnpagar">Efetuar Pagamento</button>
+       
         <br><br><br>
       </div>
     </div><!-- Fechamento do Container das contas correntes -->

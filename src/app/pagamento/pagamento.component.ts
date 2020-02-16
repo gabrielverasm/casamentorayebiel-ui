@@ -19,7 +19,7 @@ export class PagamentoComponent implements OnInit {
   errors = [];
 
   constructor(
-    private carrinhoService: CarrinhoService, 
+    private carrinhoService: CarrinhoService,
     private pagamentoService: PagamentoService) { }
 
   ngOnInit() {
@@ -28,49 +28,50 @@ export class PagamentoComponent implements OnInit {
     this.calculaTotal();
   }
 
-  calculaTotal(){
-    let valorTotal: number = 0.0;
+  calculaTotal() {
+    let valorTotal = 0.0;
     const newItems = this.items.filter(item => item.quantidade > 0);
     newItems.forEach(item => {
       valorTotal = valorTotal + (item.quantidade * item.presente.valor);
-    })
+    });
     this.items = newItems;
-    this.carrinhoService.atualizaCarrinho(this.items);     
-    this.carrinho.total = valorTotal;            
+    this.carrinhoService.atualizaCarrinho(this.items);
+    this.carrinho.total = valorTotal;
   }
 
-  limpar(){
+  limpar() {
     this.carrinhoService.limparCarrinho();
     this.carrinho = new Carrinho();
     this.pagamento = new Pagamento();
   }
 
-  onSubmit(event: any){
+  onSubmit(event: any) {
     event.preventDefault();
-    if(this.pagamento.isDeposito()){
+    if (this.pagamento.isDeposito()) {
       this.pagamentoService
         .submeterDeposito(this.carrinho)
         .subscribe(response => {
-          this.mensagem = "Deposito Registrado com sucesso!";
-          this.errors = []
+          this.mensagem = 'Obrigado por escolher fazer o depósito de ' + new Intl.NumberFormat('pt-BR',
+            { style: 'currency', currency: 'BRL' }).format(this.carrinho.total) + ' em nossa conta!';
+          this.errors = [];
           this.limpar();
-        },error => {
-          console.log(error)
+        }, error => {
+          console.log(error);
           this.mensagem = null;
-          if(error.error){
+          if (error.error) {
             this.errors = error.error;
           }
-        })
+        });
 
-    }else {
+    } else {
       this.pagamentoService
         .submeterPagamento(this.pagamento, this.carrinho)
         .subscribe(response => {
-           this.mensagem = "Pagamento Realizado com sucesso!";
-           this.limpar();
-         },error => {
+          this.mensagem = 'Pagamento Realizado com sucesso!';
+          this.limpar();
+        }, error => {
           this.mensagem = null;
-          if(error.error){
+          if (error.error) {
             this.errors = error.error;
           }
         });

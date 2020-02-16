@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class ConfirmacaoService {
 
-  //apiUrl: string = "https://casamento-raybiel-api.herokuapp.com/api/presencas";
+  apiUrl = 'https://casamento-raybiel-api.herokuapp.com/api/presencas';
 
- apiUrl: string = "http://localhost:8080/api/presencas";
+  // apiUrl = 'http://localhost:8080/api/presencas';
 
   constructor(private http: HttpClient) { }
 

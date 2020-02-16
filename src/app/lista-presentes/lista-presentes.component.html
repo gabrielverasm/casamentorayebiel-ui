@@ -11,13 +11,12 @@
             <p>{{produto.descricao}}</p>
           </div>
           <h3>{{produto.valor | currency:'BRL'}}</h3>
-          <button type="button" class="btn btn-info text-center" 
-                  (click)="adicionarProduto(produto)">Adicionar</button>
+          <button type="button" class="btn btn-info text-center" (click)="adicionarProduto(produto)">Adicionar</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="btnFloating">
+  <div class="btnFloating" *ngIf="carrinhoService.carrinhoLenght() > 0">
     <a routerLink="/pagamento">
       <img src="../assets/img/cesta.png" width="64px" height="64px">
     </a>

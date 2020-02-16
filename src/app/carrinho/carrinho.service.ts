@@ -9,47 +9,52 @@ export class CarrinhoService {
 
   constructor() { }
 
-  adicionaItem(produto: Produto){
+  adicionaItem(produto: Produto) {
     const carrinho = this.obterCarrinho();
     const itemCarrinho = new ItemCarrinho();
     itemCarrinho.presente = produto;
     itemCarrinho.quantidade = 1;
-    if(!carrinho.items){
-      carrinho.items = []
+    if (!carrinho.items) {
+      carrinho.items = [];
     }
     carrinho.items.push(itemCarrinho);
-    localStorage.setItem('_carrinho', JSON.stringify(carrinho))
+    localStorage.setItem('_carrinho', JSON.stringify(carrinho));
   }
 
-  atualizaCarrinho(items: ItemCarrinho[]){
+  carrinhoLenght(lenght: number) {
+    const carrinho: Carrinho = this.obterCarrinho();
+    return carrinho.items.length;
+  }
+
+  atualizaCarrinho(items: ItemCarrinho[]) {
     const carrinho: Carrinho = this.obterCarrinho();
     carrinho.items = items;
-    localStorage.setItem('_carrinho', JSON.stringify(carrinho))
+    localStorage.setItem('_carrinho', JSON.stringify(carrinho));
   }
 
-  obterItems() : ItemCarrinho[] {
+  obterItems(): ItemCarrinho[] {
     const carrinho: Carrinho = this.obterCarrinho();
-    if(!carrinho.items){
+    if (!carrinho.items) {
       carrinho.items = new Array<ItemCarrinho>();
     }
 
     return carrinho.items;
   }
 
-  limparCarrinho(){
+  limparCarrinho() {
     localStorage.removeItem('_carrinho');
   }
 
-  obterCarrinho() : Carrinho{
+  obterCarrinho(): Carrinho {
     const carrinho = '_carrinho';
-    const storage = localStorage.getItem('_carrinho')
+    const storage = localStorage.getItem('_carrinho');
 
-    if(!storage){
+    if (!storage) {
       const newCarrinho = new Carrinho();
       newCarrinho.items = new Array<ItemCarrinho>();
       localStorage.setItem(carrinho, JSON.stringify(newCarrinho));
       return newCarrinho;
-    }else{
+    } else {
       return JSON.parse(storage);
     }
   }

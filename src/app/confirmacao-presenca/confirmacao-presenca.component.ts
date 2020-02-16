@@ -14,22 +14,22 @@ export class ConfirmacaoPresencaComponent {
   mensagem: string;
   errors = [];
 
-  constructor(private service: ConfirmacaoService){}
+  constructor(private service: ConfirmacaoService) { }
 
-  onSubmit(event: any){
+  onSubmit(event: any) {
     event.preventDefault();
     this.service
       .confirmar(this.confirmacao)
       .subscribe(data => {
-        this.mensagem = "Presença confirmada com sucesso, "+ this.confirmacao.nome + ", te aguardamos.";
-        this.errors = []
+        this.mensagem = 'Presença confirmada com sucesso, ' + this.confirmacao.nome + ', te aguardamos.';
+        this.errors = [];
         this.confirmacao = new Confirmacao();
       }, error => {
         this.mensagem = null;
-        if(error.error){
+        if (error.error) {
           this.errors = error.error;
         }
-      })
+      });
 
   }
 }

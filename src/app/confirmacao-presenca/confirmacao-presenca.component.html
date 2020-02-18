@@ -24,7 +24,11 @@
         <input type="number" [(ngModel)]="confirmacao.telefone" name="telefone" required class="form-control telefone"
           placeholder="98888-8888" data-inputmask="'mask': '99999-9999'" id="telefone">
       </div>
-      <button type="submit" class="btn btn-info" style="margin-top: 2vw;">Confirmar Presença</button>
+      <button type="submit" class="btn btn-info" style="margin-top: 2vw;"  *ngIf="!loading">Confirmar Presença</button>
+      <div class="spinner-border" role="status" style="z-index:9999" *ngIf="loading">
+        <span class="sr-only">Loading...</span>
+      </div>   
     </form>
+   
   </div>
 </section>

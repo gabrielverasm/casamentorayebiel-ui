@@ -17,6 +17,8 @@ export class PagamentoComponent implements OnInit {
   pagamento: Pagamento = new Pagamento();
   mensagem: string;
   errors = [];
+  loading: boolean = false;
+
 
   constructor(
     private carrinhoService: CarrinhoService,
@@ -46,6 +48,7 @@ export class PagamentoComponent implements OnInit {
   }
 
   onSubmit(event: any) {
+    this.loading = true;
     event.preventDefault();
     if (this.pagamento.isDeposito()) {
       this.pagamentoService
@@ -56,7 +59,6 @@ export class PagamentoComponent implements OnInit {
           this.errors = [];
           this.limpar();
         }, error => {
-          console.log(error);
           this.mensagem = null;
           if (error.error) {
             this.errors = error.error;
@@ -76,6 +78,7 @@ export class PagamentoComponent implements OnInit {
           }
         });
     }
+    this.loading = false;
   }
 
 

@@ -13,10 +13,12 @@ export class ConfirmacaoPresencaComponent {
   confirmacao: Confirmacao = new Confirmacao();
   mensagem: string;
   errors = [];
+  loading: boolean = false;
 
   constructor(private service: ConfirmacaoService) { }
 
   onSubmit(event: any) {
+    this.loading = true
     event.preventDefault();
     this.service
       .confirmar(this.confirmacao)
@@ -30,6 +32,6 @@ export class ConfirmacaoPresencaComponent {
           this.errors = error.error;
         }
       });
-
+      this.loading = false
   }
 }

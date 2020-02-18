@@ -69,7 +69,10 @@
           </div>
           <input type="text" [(ngModel)]="carrinho.convidado" name="convidado"
             placeholder="Informe seu nome, por favor." style="width: 20vw;">
-          <button type="submit" class="btn btn-info" style="margin-left: 4px;">Avise o Depósito na Conta!!!</button>
+          <button type="submit" class="btn btn-info" style="margin-left: 4px;" *ngIf="!loading">Avise o Depósito na Conta!!!</button>
+          <div class="spinner-border" role="status" style="z-index:9999" *ngIf="loading">
+            <span class="sr-only">Loading...</span>
+          </div>  
         </div>
       </div>
       <div class="container" *ngIf="items.length > 0">

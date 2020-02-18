@@ -19,6 +19,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { PagamentoComponent } from './pagamento/pagamento.component';
+import { LoaderComponent } from './loader/loader.component';
 registerLocaleData(ptBr);
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
@@ -35,7 +36,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     ListaPresentesComponent,
     InicioComponent,
     PageNotFoundComponent,
-    PagamentoComponent
+    PagamentoComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

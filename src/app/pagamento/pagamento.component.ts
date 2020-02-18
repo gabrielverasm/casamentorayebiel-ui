@@ -70,6 +70,7 @@ export class PagamentoComponent implements OnInit {
         .submeterPagamento(this.pagamento, this.carrinho)
         .subscribe(response => {
           this.mensagem = 'Pagamento Realizado com sucesso!';
+          this.errors = [];
           this.limpar();
         }, error => {
           this.mensagem = null;

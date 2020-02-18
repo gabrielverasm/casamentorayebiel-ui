@@ -10,8 +10,8 @@ import { Carrinho } from '../carrinho/carrinho';
 export class PagamentoService {
 
  // apiUrl: string = "https://casamento-raybiel-api.herokuapp.com/api/carrinhos";
-  apiUrl: string = "http://localhost:8080/api/carrinhos";
- // apiUrl: string = "http://casamentorayebiel.digitoglobal.com.br/api/carrinhos";
+ // apiUrl: string = "http://localhost:8080/api/carrinhos";
+  apiUrl: string = "http://casamentorayebiel.digitoglobal.com.br/api/carrinhos";
 
 
   constructor(private http: HttpClient) { }

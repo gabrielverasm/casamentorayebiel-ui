@@ -70,9 +70,7 @@
           <input type="text" [(ngModel)]="carrinho.convidado" name="convidado"
             placeholder="Informe seu nome, por favor." style="width: 20vw;">
           <button type="submit" class="btn btn-info" style="margin-left: 4px;" *ngIf="!loading">Avise o Depósito na Conta!!!</button>
-          <div class="spinner-border" role="status" style="z-index:9999" *ngIf="loading">
-            <span class="sr-only">Loading...</span>
-          </div>  
+          <app-loader *ngIf="loading"></app-loader>
         </div>
       </div>
       <div class="container" *ngIf="items.length > 0">
@@ -181,11 +179,12 @@
               {{err}}
             </div>
           </div>
-          <button type="submit" class="btn btn-info btnpagar">Efetuar Pagamento</button>
-
+          <button type="submit" class="btn btn-info btnpagar" *ngIf="!loading">Efetuar Pagamento</button>
+          <app-loader *ngIf="loading"></app-loader>
           <br><br><br>
         </div>
       </div><!-- Fechamento do Container das contas correntes -->
     </div>
   </form>
 </section>
+

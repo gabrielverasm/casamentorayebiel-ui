@@ -4,17 +4,18 @@ import { Pagamento, Compra } from './pagamento';
 import { Observable } from 'rxjs';
 import { Carrinho } from '../carrinho/carrinho';
 
+import { environment } from '../../environments/environment'
+
 @Injectable({
   providedIn: 'root'
 })
 export class PagamentoService {
 
- // apiUrl: string = "https://casamento-raybiel-api.herokuapp.com/api/carrinhos";
-  apiUrl: string = "http://localhost:8080/api/carrinhos";
- // apiUrl: string = "http://casamentorayebiel.digitoglobal.com.br/api/carrinhos";
+  apiUrl: string;
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.apiUrl =  environment.apiUrl + '/carrinhos';
+  }
 
   submeterPagamento(pagamento: Pagamento, carrinho: Carrinho) : Observable<any>{
     const compra = new Compra(pagamento, carrinho);

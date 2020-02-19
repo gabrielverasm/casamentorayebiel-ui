@@ -7,6 +7,7 @@ export class Pagamento {
     email: string;
     quantidadeParcelas: number = 1;
     cartao: Cartao = new Cartao();
+    pagador: Pagador = new Pagador();
 
     isDeposito() : boolean {
         return this.forma && this.forma === 'deposito';
@@ -19,6 +20,12 @@ export class Cartao {
     numero: string;
     titular: string;
     validade: string;
+}
+
+export class Pagador {
+    nome:string;
+    cpfCnpj:string;
+    email:string;
 }
 
 export class Compra {

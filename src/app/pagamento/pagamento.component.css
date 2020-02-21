@@ -38,20 +38,34 @@ hr.style1 {
   text-align: center;
 }
 
-label {
-  padding-top: 3px;
-}
-
 .espaco {
-  margin-top: 20px;
+  margin-bottom: 20px;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.labelEditado {
+  /* text-align: center; */
+  margin-left: 17vw;
+  max-width: 600px;
+}
+
+.inputEditado {
+  max-width: 600px;
+  margin: 0 auto 0 auto;
+}
+
 .total {
   text-align: center;
-  font-size: 4vh;
+  font-size: 2.5rem;
+}
+
+.labelngif {
+  text-align: Right;
+  color: #581d22;
+  padding: 0;
+  margin: 0;
 }
 
 .btnpagar {
@@ -64,14 +78,4 @@ td {
   text-align: center;
 }
 
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-  /* Firefox */
-}
+/* color: #581d22; */

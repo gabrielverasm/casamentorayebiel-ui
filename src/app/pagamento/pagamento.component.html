@@ -46,14 +46,14 @@
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" [(ngModel)]="pagamento.forma" name="forma" id="deposito"
             value="deposito">
-          <label class="form-check-label" for="deposito">
+          <label class="form-check-label" style="margin-top: 5px;" for="deposito">
             Depósito em conta
           </label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" [(ngModel)]="pagamento.forma" name="forma" id="cartao"
             value="cartao">
-          <label class="form-check-label" for="cartao">
+          <label class="form-check-label" style="margin-top: 5px;" for="cartao">
             Cartão de Crédito
           </label>
         </div>
@@ -67,9 +67,13 @@
               {{err}}
             </div>
           </div>
-          <input type="text" [(ngModel)]="carrinho.convidado" name="convidado"
-            placeholder="Informe seu nome, por favor." style="width: 20vw;">
-          <button type="submit" class="btn btn-info" style="margin-left: 4px;" *ngIf="!loading">Avise o Depósito na Conta!!!</button>
+          <div class="form-row">
+            <input type="text" class="col-12 col-md-7 form-control shadow bg-white rounded col-12 inputEditado"
+              [(ngModel)]="carrinho.convidado" name="convidado" placeholder="Informe seu nome, por favor."
+              style="text-align: center;">
+            <button type="submit" class="btn btn-info col-12 col-md-4" style="margin-left: 4px;" *ngIf="!loading">Avise
+              o Depósito na Conta!!!</button>
+          </div>
           <app-loader *ngIf="loading"></app-loader>
         </div>
       </div>
@@ -118,58 +122,80 @@
 
         <div class="cartao" id="cartao" *ngIf="pagamento.forma === 'cartao'">
           <!-- Abrindo Pagamento com Cartão de crédito. -->
-          <input type="text" name="nome" [(ngModel)]="carrinho.convidado" class="form-control espaco"
-            placeholder="Digite seu nome." id="convidado">
-          <input type="text" matInput mask="99999999999" name="cpf" [(ngModel)]="pagamento.cpf"
-            class="form-control espaco" placeholder="Digite seu CPF." min="0" max="999" id="CPF">
-          <input type="email" name="email" [(ngModel)]="pagamento.email" class="form-control espaco"
-            placeholder="Digite seu e-mail." id="email">
-
-          <br><br>
           <div class="row">
-            <label class="col-12 total">Total: {{carrinho.total | currency: 'BRL'}}</label></div>
-          <select class="form-control form-control-lg espaco" id="parcela" name="quantidadeParcelas"
-            [(ngModel)]="pagamento.quantidadeParcelas">
-            <option value="1">01x de {{carrinho.total | currency: 'BRL'}}</option>
-            <option value="2">02x de {{carrinho.total / 2 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="3">03x de {{carrinho.total / 3 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="4">04x de {{carrinho.total / 4 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="5">05x de {{carrinho.total / 5 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="6">06x de {{carrinho.total / 6 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="7">07x de {{carrinho.total / 7 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="8">08x de {{carrinho.total / 8 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="9">09x de {{carrinho.total / 9 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="10">10x de {{carrinho.total / 10 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="11">11x de {{carrinho.total / 11 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-            <option value="12">12x de {{carrinho.total / 12 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
-            </option>
-          </select>
-          <select class="form-control form-control-lg espaco" id="bandeira" name="bandeira"
-            [(ngModel)]="pagamento.cartao.bandeira">
-            <option value="master">MasterCard</option>
-            <option value="visa">Visa</option>
-          </select>
-          <input type="text" matInput mask="9999 9999 99999 99999" name="numero" class="form-control espaco"
-            [(ngModel)]="pagamento.cartao.numero" id="numero" min="0" max="9999999999999999"
-            ng-model-options="{allowInvalid:true}" ui-credit-card-mask placeholder="Número do Cartão de Crédito.">
-          <input type="text" matInput mask="999" class="form-control espaco" name="codigoSeguranca"
-            [(ngModel)]="pagamento.cartao.codigoSeguranca" placeholder="Código de Segurança" id="codigoSeguranca">
-          <input type="text" matInput name="validade" [(ngModel)]="pagamento.cartao.validade" mask="99/9999"
-            class="form-control espaco" placeholder="Data de Validade. ex: 14/2000" id="validade">
+            <label for="convidado" class="col-12 labelEditado">Digite seu nome</label>
+            <input type=" text" name="nome" [(ngModel)]="carrinho.convidado"
+              class="form-control shadow bg-white rounded col-12 inputEditado" id="convidado"><br><br><br>
 
-          <input type="text" name="titular" [(ngModel)]="pagamento.cartao.titular" class="form-control espaco"
-            placeholder="Nome do titular do cartão." id="titular">
-          <br><br>
+            <label for="cpf" class="col-12 labelEditado">Digite seu CPF</label>
+            <input type="text" matInput mask="99999999999" name="cpf" [(ngModel)]="pagamento.cpf"
+              class="form-control shadow bg-white rounded col-12 inputEditado" min="0" max="999" id="CPF"><br><br><br>
+
+            <label for="email" class="col-12 labelEditado">Digite seu e-mail</label>
+            <input type="email" name="email" [(ngModel)]="pagamento.email"
+              class="form-control shadow bg-white rounded col-12 inputEditado" id="email"><br><br><br>
+            <label class="col-12 total">Total: {{carrinho.total | currency: 'BRL'}}</label><br><br><br>
+
+            <label for="parcela" class="col-12 labelEditado">Quantidade de Parcelas</label>
+            <select class="form-control shadow bg-white rounded col-12 inputEditado" id="parcela"
+              name="quantidadeParcelas" [(ngModel)]="pagamento.quantidadeParcelas">
+              <option value="1">01x de {{carrinho.total | currency: 'BRL'}}</option>
+              <option value="2">02x de {{carrinho.total / 2 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="3">03x de {{carrinho.total / 3 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="4">04x de {{carrinho.total / 4 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="5">05x de {{carrinho.total / 5 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="6">06x de {{carrinho.total / 6 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="7">07x de {{carrinho.total / 7 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="8">08x de {{carrinho.total / 8 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="9">09x de {{carrinho.total / 9 | currency: 'BRL'}} = {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="10">10x de {{carrinho.total / 10 | currency: 'BRL'}} =
+                {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="11">11x de {{carrinho.total / 11 | currency: 'BRL'}} =
+                {{carrinho.total | currency: 'BRL'}}
+              </option>
+              <option value="12">12x de {{carrinho.total / 12 | currency: 'BRL'}} =
+                {{carrinho.total | currency: 'BRL'}}
+              </option>
+            </select><br><br><br>
+
+            <label for="bandeira" class="col-12 labelEditado">Bandeira do Cartão</label>
+            <select class="form-control shadow bg-white rounded col-12 inputEditado" id="bandeira" name="bandeira"
+              [(ngModel)]="pagamento.cartao.bandeira">
+              <option value="master" selected>MasterCard</option>
+              <option value="visa">Visa</option>
+            </select><br><br><br>
+
+            <label for="numero" class="col-12 labelEditado">Número do Cartão</label>
+            <input type="text" matInput mask="9999999999999999" name="numero"
+              class="form-control shadow bg-white rounded col-12 inputEditado" [(ngModel)]="pagamento.cartao.numero"
+              id="numero" min="0" max="9999999999999999" ng-model-options="{allowInvalid:true}"
+              ui-credit-card-mask><br><br><br>
+
+            <label for="bandeira" class="col-12 labelEditado">Código de Segurança</label>
+            <input type="text" matInput mask="999" class="form-control shadow bg-white rounded col-12 inputEditado"
+              name="codigoSeguranca" [(ngModel)]="pagamento.cartao.codigoSeguranca" placeholder="Código de Segurança"
+              id="codigoSeguranca"><br><br><br>
+
+            <label for="bandeira" class="col-12 labelEditado">Data de Validade</label>
+            <input type="text" matInput name="validade" [(ngModel)]="pagamento.cartao.validade" mask="99/9999"
+              class="form-control shadow bg-white rounded col-12 inputEditado"
+              placeholder="Data de Validade. ex: 14/2000" id="validade"><br><br><br>
+
+            <label for="bandeira" class="col-12 labelEditado">Nome Impresso no Cartão</label>
+            <input type="text" name="titular" [(ngModel)]="pagamento.cartao.titular"
+              class="form-control shadow bg-white rounded col-12 inputEditado" placeholder="Nome do titular do cartão."
+              id="titular">
+            <br><br><br><br>
+          </div>
           <div id="feedback">
             <div *ngIf="mensagem" class="alert alert-success" role="alert">
               {{mensagem}}
@@ -187,4 +213,3 @@
     </div>
   </form>
 </section>
-

@@ -1,7 +1,7 @@
 import { Produto } from './../models/Produto';
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from '../carrinho/carrinho.service';
-import { Carrinho } from '../carrinho/carrinho';
+import { Carrinho, ItemCarrinho } from '../carrinho/carrinho';
 
 @Component({
   selector: 'app-lista-presentes',
@@ -11,12 +11,16 @@ import { Carrinho } from '../carrinho/carrinho';
 export class ListaPresentesComponent implements OnInit {
 
   loading: boolean = false;
-
   Produtos: Produto[];
+  mostarCestinha: boolean = false;
 
   constructor(public carrinhoService: CarrinhoService) { }
 
   ngOnInit() {
+    const items: ItemCarrinho[] = this.carrinhoService.obterItems();
+    if(items && items.length > 0){
+      this.mostarCestinha = true;
+    }
     this.loading = true;
     this.Produtos = [
       new Produto('../../assets/img/cueca.png', 'Compre uma cueca nova para o Gabriel impressionar na lua de mel.', 'lua de mel', 50),
@@ -62,10 +66,11 @@ export class ListaPresentesComponent implements OnInit {
     ];
     setTimeout(() => {
       this.loading = false;
-    }, 2000)
+    }, 1500)
   }
 
   adicionarProduto(produto: Produto) {
     this.carrinhoService.adicionaItem(produto);
+    this.mostarCestinha = true;
   }
 }

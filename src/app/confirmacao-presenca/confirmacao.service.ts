@@ -15,7 +15,7 @@ export class ConfirmacaoService {
     this.apiUrl = environment.apiUrl + "/presencas";
   }
 
-  confirmar(confirmacao: Confirmacao) {
+  confirmar(confirmacao: Confirmacao) : Observable<any>{
     return this.http.post<Confirmacao>(this.apiUrl, confirmacao);
   }
 }
